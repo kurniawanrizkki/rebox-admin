@@ -1,0 +1,370 @@
+:root {
+  color-scheme: light;
+  --bg: #f4f7f5;
+  --surface: rgba(255, 255, 255, 0.82);
+  --surface-strong: #ffffff;
+  --border: rgba(15, 23, 42, 0.08);
+  --text: #0f172a;
+  --muted: #475569;
+  --green: #166534;
+  --green-soft: #dcfce7;
+  --blue: #155e75;
+  --blue-soft: #dbeafe;
+  --slate-soft: #e2e8f0;
+  --danger: #b91c1c;
+  font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at top left, rgba(59, 130, 246, 0.18), transparent 22rem),
+    radial-gradient(circle at bottom right, rgba(34, 197, 94, 0.18), transparent 26rem),
+    var(--bg);
+  color: var(--text);
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button {
+  border: 0;
+  border-radius: 999px;
+  padding: 0.85rem 1.25rem;
+  cursor: pointer;
+  background: linear-gradient(135deg, #0f766e, #155e75);
+  color: white;
+  font-weight: 700;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+input,
+textarea {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 0.85rem 1rem;
+  background: #fff;
+  color: var(--text);
+}
+
+textarea {
+  resize: vertical;
+}
+
+label,
+.field-group {
+  display: grid;
+  gap: 0.45rem;
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
+.field-label,
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #0f766e;
+}
+
+.app-shell {
+  width: min(1360px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 32px 0 64px;
+}
+
+.auth-shell {
+  min-height: 100vh;
+  display: grid;
+  align-items: center;
+}
+
+.auth-card,
+.admin-section,
+.stat-card,
+.editor-card,
+.record-card {
+  backdrop-filter: blur(16px);
+  background: var(--surface);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
+}
+
+.auth-card {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 32px;
+  padding: 32px;
+  border-radius: 36px;
+}
+
+.auth-card h1,
+.topbar h1 {
+  margin: 0.25rem 0 0;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 0.95;
+}
+
+.lead {
+  color: var(--muted);
+  max-width: 44rem;
+  line-height: 1.7;
+}
+
+.auth-form,
+.editor-card {
+  display: grid;
+  gap: 16px;
+}
+
+.error-text {
+  margin: 0;
+  color: var(--danger);
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.topbar-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.ghost-button {
+  background: rgba(255, 255, 255, 0.88);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.danger {
+  color: white;
+  background: linear-gradient(135deg, #b91c1c, #7f1d1d);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.stat-card {
+  border-radius: 28px;
+  padding: 20px 22px;
+  display: grid;
+  gap: 10px;
+}
+
+.stat-card strong {
+  font-size: 2.1rem;
+}
+
+.stat-card.green {
+  background: linear-gradient(135deg, rgba(220, 252, 231, 0.95), rgba(255, 255, 255, 0.82));
+}
+
+.stat-card.blue {
+  background: linear-gradient(135deg, rgba(219, 234, 254, 0.95), rgba(255, 255, 255, 0.82));
+}
+
+.stat-card.slate {
+  background: linear-gradient(135deg, rgba(226, 232, 240, 0.95), rgba(255, 255, 255, 0.82));
+}
+
+.admin-section {
+  border-radius: 36px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.section-heading h2 {
+  margin: 0.3rem 0 0;
+  font-size: 1.8rem;
+}
+
+.section-layout {
+  display: grid;
+  grid-template-columns: 0.82fr 1.18fr;
+  gap: 20px;
+}
+
+.record-list {
+  display: grid;
+  gap: 14px;
+  max-height: 920px;
+  overflow: auto;
+  padding-right: 6px;
+}
+
+.record-card {
+  border-radius: 24px;
+  padding: 18px;
+  display: grid;
+  gap: 12px;
+}
+
+.record-card h3 {
+  margin: 0;
+}
+
+.record-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.record-title-row,
+.record-meta,
+.record-actions,
+.toggle-row {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.record-meta {
+  justify-content: flex-start;
+}
+
+.record-meta span,
+.pill {
+  padding: 0.4rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.record-meta span {
+  background: rgba(226, 232, 240, 0.7);
+}
+
+.pill.active {
+  background: var(--green-soft);
+  color: var(--green);
+}
+
+.pill.muted {
+  background: var(--slate-soft);
+  color: #334155;
+}
+
+.editor-card {
+  border-radius: 28px;
+  padding: 22px;
+}
+
+.editor-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.full-span {
+  grid-column: 1 / -1;
+}
+
+.step-editor {
+  display: grid;
+  gap: 10px;
+}
+
+.screen-state {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+
+.lead.compact {
+  margin: 0;
+}
+
+.qr-preview-card {
+  display: grid;
+  gap: 14px;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 18px;
+  background: rgba(255, 255, 255, 0.88);
+}
+
+.qr-image {
+  width: 220px;
+  max-width: 100%;
+  border-radius: 20px;
+  background: white;
+  padding: 12px;
+  border: 1px solid var(--border);
+}
+
+.payload-block {
+  display: block;
+  white-space: pre-wrap;
+  word-break: break-word;
+  border-radius: 18px;
+  padding: 14px;
+  background: #0f172a;
+  color: #e2e8f0;
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+@media (max-width: 1100px) {
+  .auth-card,
+  .section-layout,
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .app-shell {
+    width: min(100% - 20px, 1360px);
+    padding-top: 20px;
+  }
+
+  .auth-card,
+  .admin-section {
+    padding: 18px;
+    border-radius: 28px;
+  }
+
+  .editor-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .topbar,
+  .section-heading {
+    flex-direction: column;
+  }
+}
